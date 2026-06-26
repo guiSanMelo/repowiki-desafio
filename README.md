@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# RepoWiki
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto frontend em React para exibição de repositórios (interface de treino).
 
-## Available Scripts
+## Descrição
 
-In the project directory, you can run:
+Este repositório contém uma aplicação frontend simples construída com React (create-react-app). O objetivo é servir como uma interface para listar/exibir repositórios, com componentes reutilizáveis (`Button`, `Input`, `ItemsRepo`) e uma página principal em `pages/App.js`.
 
-### `npm start`
+## Estrutura do projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `public/` — arquivos estáticos e `index.html` públicos.
+- `build/` — artefatos gerados após o `build`.
+- `src/` — código fonte da aplicação:
+  - `index.js` — entrada da aplicação.
+  - `pages/App.js` — componente principal da app.
+  - `components/` — componentes reutilizáveis:
+    - `Button/` — botão estilizado.
+    - `Input/` — componente de entrada.
+    - `ItemsRepo/` — componente que renderiza itens de repositório.
+  - `service/api.js` — abstração para chamadas à API.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dependências principais
 
-### `npm test`
+Veja em `package.json` as dependências utilizadas, entre elas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `react`, `react-dom`, `react-scripts`
+- `styled-components`
+- bibliotecas de teste: `@testing-library/*`
 
-### `npm run build`
+## Scripts úteis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Utilize os scripts definidos em `package.json`:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- `npm start` — inicia o modo de desenvolvimento.
+- `npm run build` — gera a versão de produção em `build/`.
+- `npm run eject` — ejeta a configuração do create-react-app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Como rodar localmente
 
-### `npm run eject`
+1. Instale as dependências:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Inicie o servidor de desenvolvimento:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+O app ficará disponível em `http://localhost:3000` por padrão.
 
-## Learn More
+## Notas para desenvolvedores
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- A estilização usa `styled-components` (ver arquivos `styles.js` adjacentes a cada componente).
+- `service/api.js` é o lugar para configurar base URL e funções de chamada à API.
+- Componentize quando necessário e mantenha estilos isolados em `styles.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contribuição
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Pull requests são bem-vindos. Abra issues para discutir mudanças maiores.

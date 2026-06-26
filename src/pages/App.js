@@ -30,6 +30,7 @@ function App() {
       if (data.id) {
         setRepos((prev) => [...prev, data]);
         setError("");
+        console.log("Repos: ", repos);
       }
     } catch (err) {
       if (err.response?.status === 404) {
@@ -37,6 +38,18 @@ function App() {
       } else {
         setError("Não foi possível buscar este repositório no momento.");
       }
+    }
+  };
+
+  const handleRemoveRepo = (repo_id) => {
+    try {
+      console.log("Repositório pŕe filtro: ", repos)
+      const arrFiltrado = repos.filter((entrada) => entrada?.id !== repo_id);
+      console.log("Array Filtrado: ", arrFiltrado);
+      setRepos(arrFiltrado)
+      console.log("Repos pós filtro: ", repos)
+    } catch (error) {
+      console.log(error)
     }
   };
 
@@ -50,7 +63,11 @@ function App() {
       <Button placeholder={"Buscar"} onClick={handleSearchRepo} />
       {error && <p>{error}</p>}
       {repos.map((repo) => (
-        <ItemRepo key={repo.id} repo={repo} />
+        <>
+          <ItemRepo key={repo.id} repo={repo}/>
+          {console.log("Repositório: ", repo)}
+          <button onClick={()=>handleRemoveRepo(repo.id)}>Remover</button>
+        </>
       ))}
     </Container>
   );

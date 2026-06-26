@@ -1,9 +1,9 @@
 import React from "react";
 import { ItemContainer } from "./styles";
 
-const ItemRepo = ({ repo }) => {
+const ItemRepo = ({repo}) => {
   console.log(repo);
-
+  
   return (
     <ItemContainer>
       <h3>{repo?.name}</h3>
